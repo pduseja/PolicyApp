@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body{
+   font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+body[dir=rtl] .hint {
+            right: 2px;
+            left: auto;
+          }
+
+.header{
+    background: #fff; 
+    color: #135592; 
+    border-bottom: 1px solid #ededed;
+    /*box-shadow: inset 0 0 1px #ededed, inset 0 0 1px #ededed, inset 0 0 1px #ededed;*/
+    max-height: 75px !important;
+    height: 75px!important;
+}
+.header h1 { 
+    font-size: 23px !important; 
+    font-weight: bold!important;
+    color: #06b0d3;
+}
+
+.marginR20{
+    margin-right: 20px;
+}
+
+.full {
+    background: url(../images/logInBg.jpg) no-repeat 0 center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0 auto;
+    min-height: 650px;
+}
+
+.headerCommaImg {
+    background: url(../images/comma-white.png)no-repeat 0 0;
+    height: 25px;
+    position: absolute;
+    top: 65px;
+    width: 59px;
+}
+
+.transparentBg{
+    background:  rgba(40,125,154,0.75);border-radius: 2px;     padding: 40px!important;
+    color: #fff;
+        text-align: center;
+}
+.transparentBg h1{font-size: 35px !important;     margin: 0;
+    padding: 0 0 10px 0;}
+
+.positionFixed{
+    position:   fixed
+}
+
+.positionRelative{
+    position:   relative
+}
+
+.transparentBg .md-button.md-raised {
+    background: #fff; color:#0095c8;
+
+}
+.noPadding{padding:0! important;}
+.marginT200{margin: 200px 0 0;}
+
+footer md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar){
+    background: #0f4155!important; 
+    color: #fff!important
+}
+
+footer img{ 
+    margin: 15px 0 0 15px;
+}
+
+footer p {
+margin: 0 15px 0 0 ; 
+    padding: 15px 0; 
+    font-size: 12px;
+}
+
+footer md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar){
+    min-height: 50px;
+}
+
+.logInPopup{ 
+    width:300px; 
+    height: 300px;
+}
+.width100PCMargin0Padding0{
+    width: 100%;
+    margin: 0!important;
+    padding: 0!important;
+} 
+
+.marginT114{
+    margin: 114px auto;
+	width:60%;
+}
+
+.grayBg{
+    background: #f0f0f0;
+}
+.noPaddingTB{
+    padding-top: 0!important; 
+    padding-bottom: 0!important
+}
+.nomarginTB{
+    margin-top: 0!important; 
+    margin-bottom: 0!important
+}
+.whiteFont{
+    color: #f0f0f0
+}
+.borderAll{
+    border: 1px solid #bbbbbb; 
+    padding: 0 10px
+}
+.midRow{
+    border-left:1px solid #bbbbbb; 
+    border-right:1px solid #bbbbbb; 
+    padding: 0 10px; margin: 0 10px 
+}
+.noBorderTop{
+    border-top:none
+}
+.bold{
+    font-weight: bold!important
+}
+.paddingTB10{
+    padding-top: 10px!important; 
+    padding-bottom: 10px!important
+}
+.borderRight{
+    border-right: 1px solid #bbbbbb
+}
+.paddingL10{
+    padding-left: 10px
+}
+
+.buttonBlueBGWhiteText{    
+    background: #0095c8!important;
+    color: #fff!important;
+}
+
+.borderBottom{
+    border-bottom: 1px solid #bbbbbb
+}
+
+.dialogdemoBasicUsage #popupContainer {
+  position: relative; }
+
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px; }
+
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }
+
+.dialogdemoBasicUsage button {
+  width: 200px; }
+
+.dialogdemoBasicUsage div#status {
+  color: #c60008; }
+
+.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+  margin-bottom: 0; }
+
+.skyblueBg{background: #06b0d3!important; color: #fff!important}
+
+.width50PC{width: 50%}
+
+.clearBoth{clear: both}
+
+.tabsdemoDynamicHeight md-content {
+  background-color: transparent !important; }
+  .tabsdemoDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+      background: white; }
+  .tabsdemoDynamicHeight md-content h1:first-child {
+    margin-top: 0; }
+.width80pc{width: 80%!important}
+.width100PC{width: 100%!important}
+.md-datepicker.width100PC{width: 100%!important}
+.width98pc{width:98%}

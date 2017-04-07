@@ -1,0 +1,17 @@
+ [
+  {
+    "policyId": 1,
+    "policyDate": 61223106600000,
+    "status": "Y"
+  },
+{
+    "policyId": 2,
+    "policyDate": 612231066000002,
+    "status": "N"
+  },
+        {
+    "policyId": 3,
+    "policyDate": 612231066000003,
+    "status": "Y"
+  }
+]

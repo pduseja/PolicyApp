@@ -1,0 +1,86 @@
+<md-toolbar class="demo-toolbar md-primary _md _md-toolbar-transitions positionFixed">
+        <div class="md-toolbar-tools header">
+        <span  class="marginR20 positionRelative">
+        <img src="images/logo.png">
+        <span class="headerCommaImg"></span>
+        </span>
+        <span flex="" class="flex"></span>
+        <h1 class="ng-binding ng-isolate-scope">
+        <a class="docs-anchor ng-scope" ng-href="#basic-usage" name="basic-usage" href="#basic-usage">Policy Details</a>
+        </h1>
+        <span flex="" class="flex"></span>
+        <ng-md-icon icon="home" ng-click="navigateHome()"  style="fill:#06b0d3" size="40px"></ng-md-icon>
+        <ng-md-icon icon="login" ng-click="openLogIn($event)"  style="fill:#06b0d3" size="40px"></ng-md-icon>
+        <ng-md-icon icon="notifications" ng-click="openLogIn($event)"  style="fill:#06b0d3" size="40px"></ng-md-icon>
+        </div>
+</md-toolbar>
+
+
+<md-content  class="full noPadding " >
+    <div class="marginT114 layout-padding">
+    <div layout="row ">   
+    
+    <div flex class="grayBg layout-padding">
+        <div>
+            <h3>Enrolled Policies</h3>
+            <div layout="row" class="borderAll">
+              <div flex class="bold paddingTB10">Policy</div>
+              <div flex class="midRow bold paddingTB10">Enrolled Date</div>
+              <div flex class="bold paddingTB10" >Status</div>
+            </div>
+            <div layout="row" ng-repeat="policy in policyData" class="borderAll noBorderTop" ng-click="getPolicyDetails(policy.policyId);">
+              <div flex>  {{policy.policyId}}</div>
+              <div flex class="midRow">{{policy.policyDate | date:'MM-dd-yyyy'}}</div>
+              <div flex>{{policy.status}}</div>
+            </div>
+        </div>
+        
+         <div ng-show="policyDetails">
+            <h3>Policy Details</h3>
+            <div layout="row" class="borderAll">
+               <div flex class="borderRight">Policy</div>
+                <div flex class="paddingL10">{{policyDetails.policyId}}</div>
+            </div>
+             <div layout="row" class="borderAll noBorderTop">
+               <div flex class="borderRight">Sum Assured</div><div flex class="paddingL10">{{policyDetails.sumAssured}}</div>
+             </div>
+             <div layout="row" class="borderAll noBorderTop">
+               <div flex class="borderRight">Term Plan</div><div flex class="paddingL10">{{policyDetails.term}}</div>
+             </div>
+             <div layout="row" class="borderAll noBorderTop">
+               <div flex class="borderRight">Commencement Date</div><div flex class="paddingL10">{{policyDate}}</div>
+             </div>
+             <div layout="row" class="borderAll noBorderTop">
+               <div flex class="borderRight">premium</div><div flex class="paddingL10">{{policyDetails.premium}}</div>
+             </div>
+             <div layout="row" class="borderAll noBorderTop">
+               <div flex class="borderRight">Policy Date</div><div flex class="paddingL10">{{policyDate}}</div>
+             </div>
+        </div>
+         <md-button class="md-raised buttonBlueBGWhiteText" ng-click="openPayOnline($event)"> pay premium online</md-button>
+        
+    </div>    
+    </div> 
+    </div>
+  </md-content>
+
+
+<footer>
+<md-toolbar class="demo-toolbar md-primary _md _md-toolbar-transitions">
+
+<div layout="row" layout-xs="column">
+  <div flex>
+      <div layout="row" layout-align="start center">
+    <img src="images/ticker_tagline.png">
+      </div>
+  </div>
+  <div flex>
+      <div layout="row" layout-align="end center">
+    <p>Copyright &copy; 2016 Capgemini. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+
+    </md-toolbar>
+</footer>

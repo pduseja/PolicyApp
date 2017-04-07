@@ -1,0 +1,144 @@
+<md-toolbar class="demo-toolbar md-primary _md _md-toolbar-transitions positionFixed">
+  <div class="md-toolbar-tools header">
+    <span class="marginR20 positionRelative">
+        <img src="images/logo.png">
+        <span class="headerCommaImg"></span>
+    </span>
+    <span flex="" class="flex"></span>
+    <h1 class="ng-binding ng-isolate-scope">
+      <a class="docs-anchor ng-scope" ng-href="#basic-usage" name="basic-usage" href="#basic-usage">Quick Quote</a>
+    </h1>
+    <span flex="" class="flex"></span>
+    <ng-md-icon icon="home" ng-click="navigateHome()" style="fill:#06b0d3" size="40px"></ng-md-icon>
+    <ng-md-icon icon="login" ng-click="openLogIn($event)" style="fill:#06b0d3" size="40px"></ng-md-icon>
+<!--    <ng-md-icon icon="notifications" ng-click="openLogIn($event)" style="fill:#06b0d3" size="40px"></ng-md-icon>-->
+  </div>
+</md-toolbar>
+
+
+<md-content class="full layout-padding">
+  <div class="marginT114">
+    <div>
+      <div class="grayBg ">
+          <h3 layout-padding>Term Life Insurance Quote</h3>
+            <md-content layout-padding>
+              <div>
+                <form name="userForm">
+					<div layout-gt-xs="row">
+						<div flex class="borderRight">
+							 <h3 layout-padding>Applicant Information</h3>
+								<md-input-container class="md-block" flex-gt-sm>
+								  <label>First Name</label>
+								  <input ng-model="user.firstName"/>
+						   		</md-input-container>
+								
+								<md-input-container class="md-block" flex-gt-sm>
+								  <label>Last Name</label>
+								  <input ng-model="user.lastName"/>
+						   		</md-input-container>
+							 
+								
+								<md-input-container class="md-block" flex-gt-sm>
+								  <label>State of Residence</label>
+								  <md-select ng-model="user.state">
+									<md-option ng-repeat="state in states" value="{{state.abbrev}}">
+									  {{state.abbrev}}
+									</md-option>
+								  </md-select>
+								</md-input-container>
+							
+							    <md-input-container class="md-block" flex-gt-sm>
+									<p>Gender</p>
+									<md-radio-group ng-model="user.gender" class="md-block" layout="row" layout-align="center center">
+									  <md-radio-button flex="50" value="Male" class="md-primary"> Male </md-radio-button>
+									  <md-radio-button flex="50" value="Female"> Female </md-radio-button>
+									</md-radio-group>
+								</md-input-container>
+							
+							    <div flex-gt-xs>
+								  <p>Date Of Birth</p>
+								  <md-datepicker ng-model="user.dob" md-placeholder="Enter date" md-open-on-focus></md-datepicker>
+								</div>
+							
+							    <md-input-container class="md-block" flex-gt-sm>
+								  <label>Height &nbsp;(In Centimeter)</label>
+								  <input ng-model="user.height" maxlength="3"/>
+						   		</md-input-container>
+							
+							 <md-input-container class="md-block" flex-gt-sm>
+								  <label>Weight &nbsp;(In Kilogram)</label>
+								  <input ng-model="user.weight" maxlength="3"/>
+						   		</md-input-container>
+							
+						</div>
+						
+						<div flex>
+							 <h3 layout-padding>Insurance Information</h3>
+							 <md-input-container class="md-block" flex-gt-sm>
+								  <label>Tobacco / Nicotine Use</label>
+								  <md-select ng-model="user.tobacoUse">
+									<md-option ng-repeat="tobUse in tobUses" value="{{tobUse.abbrev}}">
+									  {{tobUse.abbrev}}
+									</md-option>
+								  </md-select>
+							</md-input-container>
+							<md-input-container class="md-block" flex-gt-sm>
+							  <label>Your Health</label>
+							  <md-select ng-model="user.health">
+								<md-option ng-repeat="health in healths" value="{{health.abbrev}}">
+								  {{health.abbrev}}
+								</md-option>
+							  </md-select>
+					   		</md-input-container>
+							<md-input-container class="md-block" flex-gt-sm>
+							  <label>Coverage Amount &nbsp;(In Rupees)</label>
+							  <md-select ng-model="user.covAmt">
+								<md-option ng-repeat="covAmt in covAmts" value="{{covAmt.abbrev}}">
+								  {{covAmt.abbrev}}
+								</md-option>
+							  </md-select>
+					   		</md-input-container>
+							<md-input-container class="md-block" flex-gt-sm>
+							  <label>Length of Coverage &nbsp;(In Years)</label>
+							  <md-select ng-model="user.term">
+								<md-option ng-repeat="term in terms" value="{{term.abbrev}}">
+								  {{term.abbrev}}
+								</md-option>
+							  </md-select>
+					   		</md-input-container>
+						</div>
+						
+					</div>
+					                
+				  </form>
+              </div>
+               <md-button class="md-raised  buttonBlueBGWhiteText width98pc" ng-click="onGetQuote()">Submit</md-button>
+            </md-content>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</md-content>
+
+<footer>
+  <md-toolbar class="demo-toolbar md-primary _md _md-toolbar-transitions">
+
+    <div layout="row" layout-xs="column">
+      <div flex>
+        <div layout="row" layout-align="start center">
+          <img src="images/ticker_tagline.png">
+        </div>
+      </div>
+      <div flex>
+        <div layout="row" layout-align="end center">
+          <p>Copyright &copy; 2016 Capgemini. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+
+  </md-toolbar>
+</footer>
