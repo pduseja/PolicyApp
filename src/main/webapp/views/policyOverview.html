@@ -28,7 +28,7 @@
               <div flex class="midRow bold paddingTB10">Enrolled Date</div>
               <div flex class="bold paddingTB10" >Status</div>
             </div>
-            <div layout="row" ng-repeat="policy in policyData" class="borderAll noBorderTop" ng-click="getPolicyDetails(policy.policyId);">
+            <div layout="row" ng-repeat="policy in policyData" class="borderAll noBorderTop" ng-click="getSubPolicyDetails(policy.policyId);getPolicyDetails(policy.policyId);">
               <div flex>  {{policy.policyId}}</div>
               <div flex class="midRow">{{policy.policyDate | date:'MM-dd-yyyy'}}</div>
               <div flex>{{policy.status}}</div>
@@ -45,16 +45,16 @@
                <div flex class="borderRight">Sum Assured</div><div flex class="paddingL10">{{policyDetails.sumAssured}}</div>
              </div>
              <div layout="row" class="borderAll noBorderTop">
-               <div flex class="borderRight">Term Plan</div><div flex class="paddingL10">{{policyDetails.term}}</div>
+               <div flex class="borderRight">Term Plan</div><div flex class="paddingL10">{{subPolicyDetails.term}}</div>
              </div>
              <div layout="row" class="borderAll noBorderTop">
                <div flex class="borderRight">Commencement Date</div><div flex class="paddingL10">{{policyDate}}</div>
              </div>
              <div layout="row" class="borderAll noBorderTop">
-               <div flex class="borderRight">premium</div><div flex class="paddingL10">{{policyDetails.premium}}</div>
+               <div flex class="borderRight">premium</div><div flex class="paddingL10">{{subPolicyDetails.premium}}</div>
              </div>
              <div layout="row" class="borderAll noBorderTop">
-               <div flex class="borderRight">Policy Date</div><div flex class="paddingL10">{{policyDate}}</div>
+               <div flex class="borderRight">Policy Date</div><div flex class="paddingL10">{{subPolicyDate}}</div>
              </div>
         </div>
          <md-button class="md-raised buttonBlueBGWhiteText" ng-click="openPayOnline($event)"> pay premium online</md-button>
