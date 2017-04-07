@@ -42,6 +42,28 @@ policyOverview.factory("policyService", function ($http) {
             });
 
     },
+     policyService.getSubPolicy = function (id, subPolicyCallback) {
+
+        var dataObj = {
+            "policyId": id
+        };
+        console.log("Policy selected = "+ dataObj);
+        $http.post('http://localhost:8091/getSubPolicy', dataObj).
+            success(function (data) {
+
+                console.log(data);
+                subPolicyCallback(data);
+                /*policyCallback({
+                    "policyId": 4658254387979106229,
+                    "policyDate": 1490832000000,
+                    "premium": 1111.1111,
+                    "status": "A",
+                    "term": 15,
+                    "sumAssured": 200000
+                });*/
+            });
+
+    },
 
         policyService.getQuote = function (quoteData, quoteCallback) {
 				console.log(JSON.stringify(quoteData));
