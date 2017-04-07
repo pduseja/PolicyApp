@@ -33,10 +33,19 @@ policyOverview.controller('policyOverviewController', function ($scope, $rootSco
     $scope.policyDetails = data;
 	$scope.policyDate = new Date(data["policyDate"]);
   }   
-
+  function subPolicyCallback(data) {
+    $scope.subPolicyDetails = data;
+	$scope.subPolicyDate = new Date(data["policyDate"]);
+  } 
+	
   $scope.getPolicyDetails= function(id){   
  
     policyService.getPolicy(id,policyCallback);
+  }
+  
+  $scope.getSubPolicyDetails= function(id){   
+ 
+    policyService.getSubPolicy(id,subPolicyCallback);
   }
 
   //popup
