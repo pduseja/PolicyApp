@@ -26,7 +26,7 @@ policyOverview.factory("policyService", function ($http) {
             "policyId": id
         };
         console.log("Policy selected = "+ dataObj);
-        $http.post('http://localhost:8081/getPolicy', dataObj).
+        $http.post('http://localhost:8097/policy/getPolicy', dataObj).
             success(function (data) {
 
                 console.log(data);
@@ -48,7 +48,7 @@ policyOverview.factory("policyService", function ($http) {
             "policyId": id
         };
         console.log("Policy selected = "+ dataObj);
-        $http.post('http://localhost:8091/getSubPolicy', dataObj).
+        $http.post('http://localhost:8097/subPolicy/getSubPolicy', dataObj).
             success(function (data) {
 
                 console.log(data);

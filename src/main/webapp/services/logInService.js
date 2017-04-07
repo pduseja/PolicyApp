@@ -9,11 +9,11 @@ policyOverview.factory("logInService", function ($http) {
         //     logInCallback(data); 
         // });
 
-        $http.post('http://localhost:8083/login', dataObj).
+        $http.post('http://localhost:8097/login/login', dataObj).
             success(function (data) {
                 if (data == true) {
                     var payload = { "userName": dataObj.userName };
-                    $http.post('http://localhost:8081/getAllPolicy', payload).
+                    $http.post('http://localhost:8097/policy/getAllPolicy', payload).
                         success(function (data) {   
 							console.log("Policy List Resp");
 							console.log(data)
