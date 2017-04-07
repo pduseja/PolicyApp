@@ -68,7 +68,7 @@ policyOverview.factory("policyService", function ($http) {
         policyService.getQuote = function (quoteData, quoteCallback) {
 				console.log(JSON.stringify(quoteData));
 				console.log(quoteData); 
-                $http.post('http://localhost:8090/QQ', quoteData).
+                $http.post('http://localhost:8097/quote/QQ', quoteData).
                      success(function (data) { 
                          console.log(data); 
                          quoteCallback(data);               
