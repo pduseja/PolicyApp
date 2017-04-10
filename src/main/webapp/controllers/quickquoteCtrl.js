@@ -13,7 +13,7 @@ policyOverview.controller('quickQuoteController', function ($scope,policyService
         postalCode: '94043'
     };  
 		
-	$scope.states = ('Andhra Pradesh,Arunachal Pradesh,Assam Bihar,Chhattisgarh,Goa,Gujarat,Maharashtra').split(',').map(function (state) {
+	$scope.states = ('Andhra Pradesh,Arunachal Pradesh,Assam,Bihar,Chhattisgarh,Goa,Gujarat,Maharashtra').split(',').map(function (state) {
             return { abbrev: state };
         });
 		
@@ -37,7 +37,8 @@ policyOverview.controller('quickQuoteController', function ($scope,policyService
 
 
     function quoteCallback(data) {
-            alert(data["message"]);
+    	document.getElementById("successMsgDiv").style.display = 'block';
+    	document.getElementById("successMsg").innerHTML = data["message"];
     }
     $scope.onGetQuote = function () {
  

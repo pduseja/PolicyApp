@@ -31,11 +31,13 @@ policyOverview.controller('policyOverviewController', function ($scope, $rootSco
 
   function policyCallback(data) {
     $scope.policyDetails = data;
-	$scope.policyDate = new Date(data["policyDate"]);
+	var d = new Date(data["policyDate"]);
+	$scope.policyDate = d.getMonth()+"-"+d.getDate()+"-"+d.getFullYear();
   }   
   function subPolicyCallback(data) {
     $scope.subPolicyDetails = data;
-	$scope.subPolicyDate = new Date(data["policyDate"]);
+    var d = new Date(data["policyDate"]);
+	$scope.subPolicyDate = d.getMonth()+"-"+d.getDate()+"-"+d.getFullYear();
   } 
 	
   $scope.getPolicyDetails= function(id){   

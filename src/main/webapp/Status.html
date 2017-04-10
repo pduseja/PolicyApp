@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript"
+        src="/js/jquery-3.2.0.min.js"></script>
+<script>
+
+	
+function getStatusJ(id,port) {
+	$.ajax({
+        url: 'http://localhost:' + port + '/health',
+        success: function (result) {
+        	$("#"+id).css("color","green");
+            $("#"+id).val(result.status);
+        },
+        error: function(result) {
+        	$("#"+id).css("color","red");
+        	$("#"+id).val("Service Unavailable");
+        },
+        async: false
+    });
+}
+
+
+function shutdown(id,port)
+{
+	$("#"+id).val("Shutting down");
+$.post("http://localhost:"+port+"/shutdown",null,
+   function(data, status){
+       $("#"+id).val(data.message);
+   });
+}
+	
+$(document).ready(function() {
+	setInterval(function() {
+		getStatusJ("1",8090);
+		getStatusJ("2",8092);
+		getStatusJ("3",8081);
+		getStatusJ("4",8091);
+		getStatusJ("5",8083);
+		getStatusJ("6",8082);
+	},5000);
+});
+
+</script>
+</head>
+<body>
+<form>
+<table>
+<tr><td> Quote </td><td><input type="label" name="txtResultQuote" id="1" value="loading status..."/></td><td><input type="button" value="ShutDown" onclick="javascript:shutdown('1',8090);"></td></tr>
+<tr><td> Quote 2 </td><td><input type="label" name="txtResultQuote2" id="2" value="loading status..."/></td><td><input type="button" value="ShutDown" onclick="javascript:shutdown('2',8092);"></td></tr>
+<tr><td> Policy </td><td><input type="label" name="txtResultPolicy" id="3" value="loading status..."/></td><td><input type="button" value="ShutDown" onclick="javascript:shutdown('3',8081);"></td></tr>
+<tr><td> Sub Policy </td><td><input type="label" name="txtResultSubPolicy" id="4" value="loading status..."/></td><td><input type="button" value="ShutDown" onclick="javascript:shutdown('4',8091);"></td></tr>
+<tr><td> Login </td><td><input type="label" name="txtResultLogin" id="5" value="loading status..."/></td><td><input type="button" value="ShutDown" onclick="javascript:shutdown('5',8083);"></td></tr>
+<tr><td> Billing </td><td><input type="label" name="txtResultBilling" id="6" value="loading status..."/></td><td><input type="button" value="ShutDown" onclick="javascript:shutdown('6',8082);"></td></tr>
+
+
+</table>
+</form>
+</body>
+</html>
