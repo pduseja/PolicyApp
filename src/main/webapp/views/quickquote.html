@@ -21,6 +21,10 @@
     <div>
       <div class="grayBg ">
           <h3 layout-padding>Term Life Insurance Quote</h3>
+          	<md-button class="md-icon-button" ng-click="cancel()">
+          <!--<md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>-->
+		  <ng-md-icon icon="close" ng-click="openLogIn($event)"  style="fill:#fff" aria-label="Close dialog"></ng-md-icon>
+        </md-button>
             <md-content layout-padding>
               <div>
                 <form name="userForm">
@@ -106,6 +110,10 @@
 								</md-option>
 							  </md-select>
 					   		</md-input-container>
+					   		<br/>
+					   		 <div style="display:none;" id="successMsgDiv">
+							   <p id="successMsg" style="color: #4F8A10;background-color: #DFF2BF;border-radius: .3em;padding: 5px;text-align: center;"></p>
+						   </div>
 						</div>
 						
 					</div>
@@ -113,9 +121,6 @@
 				  </form>
               </div>
                <md-button class="md-raised  buttonBlueBGWhiteText width98pc" ng-click="onGetQuote()">Submit</md-button>
-               <div style="display:none;" id="successMsgDiv">
-				   <p id="successMsg" style="color: #4F8A10;background-color: #DFF2BF;border-radius: .3em;padding: 5px;"></p>
-			   </div>
             </md-content>
 
 

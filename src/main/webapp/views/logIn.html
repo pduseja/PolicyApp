@@ -35,7 +35,7 @@
           </div>
         </md-input-container>
           
-        <md-input-container class="md-block">
+       <!--  <md-input-container class="md-block">
         <md-checkbox name="tos" ng-model="project.tos" required>
           Remember me.
         </md-checkbox>
@@ -44,10 +44,13 @@
            Forgot password.
           </div>
         </div>
-      </md-input-container>
+      </md-input-container> -->
       </div>
      <div layout-gt-sm="row">
       <md-button class="md-raised md-primary width100PCMargin0Padding0" ng-click="onLogIn()">Sign In</md-button>
-        </div>
+     </div>
+      <div style="display:none;" id="loginMsgDiv">
+		   <p id="loginMsg" style="color: #D8000C;background-color: #FFBABA;border-radius: .3em;padding: 5px;text-align: center;"></p>
+	   </div>   
     </form>
   </md-content>

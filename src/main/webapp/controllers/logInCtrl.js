@@ -10,10 +10,6 @@ policyOverview.controller('logInController', function ($scope, $mdDialog, logInS
 
 		}
 		
-		function logInFailureCallBack(data) {
-			$scope.message="Service unavailable"; 
-
-		}
 
 		//validation pending
 

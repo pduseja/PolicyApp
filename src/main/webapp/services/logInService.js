@@ -22,7 +22,8 @@ policyOverview.factory("logInService", function ($http) {
                 }
                  
             }).error(function(data) {
-            	alert("Service Unavailable");
+            	document.getElementById("loginMsgDiv").style.display = 'block';
+    	    	document.getElementById("loginMsg").innerHTML = "Login Service Unavailable";
             });
 
 

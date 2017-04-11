@@ -29,7 +29,7 @@
               <div flex class="bold paddingTB10" >Status</div>
             </div>
             <div layout="row" ng-repeat="policy in policyData" class="borderAll noBorderTop" ng-click="getSubPolicyDetails(policy.policyId);getPolicyDetails(policy.policyId);">
-              <div flex>  {{policy.policyId}}</div>
+              <div flex> <span style="cursor:pointer;color:blue;text-decoration:underline;"> {{policy.policyId}} </span></div>
               <div flex class="midRow">{{policy.policyDate | date:'MM-dd-yyyy'}}</div>
               <div flex>{{policy.status}}</div>
             </div>
@@ -57,7 +57,7 @@
                <div flex class="borderRight">Policy Date</div><div flex class="paddingL10">{{subPolicyDate}}</div>
              </div>
         </div>
-         <md-button class="md-raised buttonBlueBGWhiteText" ng-click="openPayOnline($event)"> pay premium online</md-button>
+         
         
     </div>    
     </div> 
