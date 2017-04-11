@@ -19,6 +19,34 @@
 policyOverview.factory("policyService", function ($http) {
 
     policyService = {}
+    
+    
+    policyService.getAllPolicy = function (dataObj, allPolicyCallback) {
+
+        // $http.get("services/response/logInResponse.json").
+        // success(function(data){
+        //     logInCallback(data); 
+        // });
+
+        $http.post('http://localhost:8097/policy/getAllPolicy', dataObj).
+            success(function (data) {
+							console.log("Policy List Resp");
+							console.log(data)
+                            allPolicyCallback(data);
+                 
+            });
+
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     policyService.getPolicy = function (id, policyCallback) {
 

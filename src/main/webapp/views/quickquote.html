@@ -1,18 +1,17 @@
 <md-toolbar class="demo-toolbar md-primary _md _md-toolbar-transitions positionFixed">
-  <div class="md-toolbar-tools header">
-    <span class="marginR20 positionRelative">
+        <div class="md-toolbar-tools header">
+        <span  class="marginR20 positionRelative">
         <img src="images/logo.png">
         <span class="headerCommaImg"></span>
-    </span>
-    <span flex="" class="flex"></span>
-    <h1 class="ng-binding ng-isolate-scope">
-      <a class="docs-anchor ng-scope" ng-href="#basic-usage" name="basic-usage" href="#basic-usage">Quick Quote</a>
-    </h1>
-    <span flex="" class="flex"></span>
-    <ng-md-icon icon="home" ng-click="navigateHome()" style="fill:#06b0d3" size="40px"></ng-md-icon>
-    <ng-md-icon icon="login" ng-click="openLogIn($event)" style="fill:#06b0d3" size="40px"></ng-md-icon>
-<!--    <ng-md-icon icon="notifications" ng-click="openLogIn($event)" style="fill:#06b0d3" size="40px"></ng-md-icon>-->
-  </div>
+        </span>
+        <span flex="" class="flex"></span>
+        <h1 class="ng-binding ng-isolate-scope">
+        <a class="docs-anchor ng-scope" ng-href="#basic-usage" name="basic-usage" href="#basic-usage">Policy Overview</a>
+        </h1>
+        <span flex="" class="flex"></span>
+        <ng-md-icon icon="home" ng-click="navigateHome()"  style="fill:#06b0d3" size="40px"></ng-md-icon>
+        <!-- <ng-md-icon icon="login" ng-click="openLogIn($event)"  style="fill:#06b0d3" size="40px"></ng-md-icon> -->     
+        </div>
 </md-toolbar>
 
 
@@ -20,7 +19,17 @@
   <div class="marginT114">
     <div>
       <div class="grayBg ">
-          <h3 layout-padding>Term Life Insurance Quote</h3>
+      <div class="md-toolbar-tools skyblueBg">
+        <h3 layout-padding>Term Life Insurance Quote</h3>
+        <span flex></span>
+      </div>
+      
+      
+    <!--       <h3 layout-padding>Term Life Insurance Quote</h3>
+          <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+		  <ng-md-icon icon="close" ng-click="openLogIn($event)"  style="fill:#fff" aria-label="Close dialog"></ng-md-icon>
+        </md-button> -->
             <md-content layout-padding>
               <div>
                 <form name="userForm">

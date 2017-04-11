@@ -6,7 +6,7 @@ policyOverview.controller('logInController', function ($scope, $mdDialog, logInS
 			$mdDialog.hide();
 			$location.path("/policyOverview");
 
-			$rootScope.allPolicyDetails = data;
+			sessionStorage.loggedInUserName = data;
 
 		}
 		

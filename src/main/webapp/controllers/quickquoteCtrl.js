@@ -1,4 +1,26 @@
-policyOverview.controller('quickQuoteController', function ($scope,policyService, $rootScope) {
+policyOverview.controller('quickQuoteController', function ($scope,policyService, $rootScope,$mdDialog,$location) {
+	
+	$rootScope.navigateHome = function () {
+	    $location.path("/home");
+	  }
+	
+	
+	$scope.openLogIn = function(ev){
+	    
+	    $mdDialog.show({
+	      controller: 'logInController',
+	      templateUrl: 'views/logIn.html',
+	      parent: angular.element(document.body),
+	      targetEvent: ev,
+	      clickOutsideToClose:true,
+	      fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+	    })
+	    .then(function(answer) {
+	      $scope.status = 'You said the information was "' + answer + '".';
+	    }, function() {
+	      $scope.status = 'You cancelled the dialog.';
+	    });
+	  };
 
     $scope.user = {
         title: 'Developer',
@@ -34,6 +56,9 @@ policyOverview.controller('quickQuoteController', function ($scope,policyService
         });
 
 
+	function closeDialog () {
+        $(this).dialog("close");
+     }
 
 
     function quoteCallback(data) {

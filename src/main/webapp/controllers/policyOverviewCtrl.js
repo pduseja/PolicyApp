@@ -1,6 +1,9 @@
 policyOverview.controller('policyOverviewController', function ($scope, $rootScope, $mdDialog, $location, $http, $filter, $rootScope, policyService) {
   $scope.title = "policy overview"
-
+	  
+	  
+	  
+	  
   /*$scope.policyData = [
 {
   "policyId": 1,
@@ -21,8 +24,20 @@ policyOverview.controller('policyOverviewController', function ($scope, $rootSco
 
 
   //$scope.policyData  =  policyService.getPolicy(policyCallback);
+	  var getAllPolicyPayLoad = {
+			"userName": sessionStorage.loggedInUserName,
+		}
+	  
+	  var init = function() {
+	  	policyService.getAllPolicy(getAllPolicyPayLoad,allPolicyCallback);
+  	  }
+	  
+	  function allPolicyCallback(data) {
+	    $scope.policyData = data;
+	  }  
+	  
+	  init();
 
-  $scope.policyData = $rootScope.allPolicyDetails;
 
   $rootScope.navigateHome = function () {
     $location.path("/home");

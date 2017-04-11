@@ -12,13 +12,12 @@ policyOverview.factory("logInService", function ($http) {
         $http.post('http://localhost:8097/login/login', dataObj).
             success(function (data) {
                 if (data == true) {
-                    var payload = { "userName": dataObj.userName };
-                    $http.post('http://localhost:8097/policy/getAllPolicy', payload).
-                        success(function (data) {   
-							console.log("Policy List Resp");
-							console.log(data)
-                            logInCallback(data);
-                        });
+                    
+                   logInCallback(dataObj.userName);
+                        
+                } else if(data == false) {
+                	document.getElementById("loginMsgDiv").style.display = 'block';
+        	    	document.getElementById("loginMsg").innerHTML = "Invalid Credentials";
                 }
                  
             }).error(function(data) {
