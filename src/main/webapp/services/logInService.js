@@ -10,7 +10,7 @@ policyOverview.factory("logInService", function ($http) {
         // });
 
         $http.post('https://127.0.0.1:8243/login/1/login', dataObj,{
-        withCredentials: true,
+        'Content-Type': 'application/json',
         headers:{"Authorization":"Bearer 395275bb-ea3a-3d2f-956e-41598d841b57"}}).
             success(function (data) {
                 if (data == true) {
